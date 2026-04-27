@@ -37,25 +37,23 @@ export default function FAQ() {
   return (
     <section
       className="relative py-24 px-4 overflow-hidden"
-      style={{ background: "#0d1f1a" }}
+      style={{ background: "#f0fafb" }}
     >
+      {/* Glow blobs */}
+      <div className="absolute top-10 left-20 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: "#06b6d410" }}></div>
+      <div className="absolute bottom-10 right-20 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: "#06b6d410" }}></div>
+
       <div className="max-w-4xl mx-auto">
 
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
-          <p
-            className="text-sm font-medium tracking-widest uppercase"
-            style={{ color: "#13f076" }}
-          >
+          <p className="text-sm font-medium tracking-widest uppercase" style={{ color: "#06b6d4" }}>
             FAQ
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Common <span style={{ color: "#13f076" }}>Questions</span>
+          <h2 className="text-4xl md:text-5xl font-bold" style={{ color: "#0a0a0a" }}>
+            Common <span style={{ color: "#06b6d4" }}>Questions</span>
           </h2>
-          <p
-            className="text-lg"
-            style={{ color: "rgba(255,255,255,0.55)" }}
-          >
+          <p className="text-lg" style={{ color: "#6b7280" }}>
             Everything you need to know about Kaizen ERP
           </p>
         </div>
@@ -67,8 +65,11 @@ export default function FAQ() {
               key={index}
               className="rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer"
               style={{
-                background: "#111f1a",
-                border: `1px solid ${openIndex === index ? "#13f07660" : "#13f07625"}`,
+                background: "#ffffff",
+                border: `1px solid ${openIndex === index ? "#06b6d460" : "#06b6d425"}`,
+                boxShadow: openIndex === index
+                  ? "0 4px 24px rgba(6,182,212,0.10)"
+                  : "0 2px 12px rgba(6,182,212,0.05)",
               }}
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
             >
@@ -76,14 +77,14 @@ export default function FAQ() {
               <button className="w-full px-6 py-5 flex items-center justify-between transition cursor-pointer">
                 <h3
                   className="text-base font-semibold text-left"
-                  style={{ color: openIndex === index ? "#13f076" : "white" }}
+                  style={{ color: openIndex === index ? "#06b6d4" : "#0a0a0a" }}
                 >
                   {faq.question}
                 </h3>
                 <ChevronDown
                   className="w-5 h-5 flex-shrink-0 ml-4 transition-transform duration-300"
                   style={{
-                    color: "#13f076",
+                    color: "#06b6d4",
                     transform: openIndex === index ? "rotate(180deg)" : "rotate(0deg)",
                   }}
                 />
@@ -94,8 +95,8 @@ export default function FAQ() {
                 <div
                   className="px-6 pb-6 pt-0 text-sm leading-relaxed border-t"
                   style={{
-                    color: "rgba(255,255,255,0.60)",
-                    borderColor: "#13f07620",
+                    color: "#6b7280",
+                    borderColor: "#06b6d420",
                   }}
                 >
                   <p className="pt-4">{faq.answer}</p>

@@ -22,16 +22,22 @@ export default function Problem() {
   ]
 
   return (
-    <section className="relative py-24 px-4 overflow-hidden" style={{ background: "#0d1f1a" }}>
+    <section className="relative py-24 px-4 overflow-hidden" style={{ background: "#f0fafb" }}>
+
+      {/* Glow blobs */}
+      <div className="absolute top-10 left-20 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: "#06b6d410" }}></div>
+      <div className="absolute bottom-10 right-20 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: "#06b6d410" }}></div>
+
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-16">
-          <h2
-            className="text-4xl md:text-5xl font-bold text-white"
-          >
+          <p className="text-sm font-medium tracking-widest uppercase" style={{ color: "#06b6d4" }}>
+            The Problem
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold" style={{ color: "#0a0a0a" }}>
             Is Your Business{" "}
-            <span style={{ color: "#13f076" }}>Holding Itself Back?</span>
+            <span style={{ color: "#06b6d4" }}>Holding Itself Back?</span>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: "rgba(255,255,255,0.55)" }}>
+          <p className="text-lg max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
             Most growing businesses hit the same wall — disconnected systems, manual processes, and zero visibility.
           </p>
         </div>
@@ -43,26 +49,33 @@ export default function Problem() {
             return (
               <div
                 key={index}
-                className="p-8 rounded-2xl transition group backdrop-blur-sm"
+                className="p-8 rounded-2xl transition-all duration-300 group"
                 style={{
-                  background: "#111f1a",
-                  border: "1px solid #13f07630",
+                  background: "#ffffff",
+                  border: "1px solid #06b6d425",
+                  boxShadow: "0 2px 16px rgba(6,182,212,0.06)",
                 }}
-                onMouseEnter={e => (e.currentTarget.style.borderColor = "#13f07670")}
-                onMouseLeave={e => (e.currentTarget.style.borderColor = "#13f07630")}
+                onMouseEnter={e => {
+                  e.currentTarget.style.borderColor = "#06b6d460"
+                  e.currentTarget.style.boxShadow = "0 4px 24px rgba(6,182,212,0.12)"
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.borderColor = "#06b6d425"
+                  e.currentTarget.style.boxShadow = "0 2px 16px rgba(6,182,212,0.06)"
+                }}
               >
                 <div
-                  className="w-12 h-12 rounded-lg flex items-center justify-center mb-5"
-                  style={{ background: "#13f07610", border: "1px solid #13f07630" }}
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                  style={{ background: "#06b6d412", border: "1px solid #06b6d430" }}
                 >
-                  <Icon className="w-6 h-6" strokeWidth={1.5} style={{ color: "#13f076" }} />
+                  <Icon className="w-6 h-6" strokeWidth={1.5} style={{ color: "#06b6d4" }} />
                 </div>
-                <h3
-                  className="text-xl font-semibold mb-2 text-white"
-                >
+                <h3 className="text-xl font-semibold mb-2" style={{ color: "#0a0a0a" }}>
                   {problem.stat}
                 </h3>
-                <p style={{ color: "rgba(255,255,255,0.50)" }}>{problem.description}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
+                  {problem.description}
+                </p>
               </div>
             )
           })}

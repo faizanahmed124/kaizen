@@ -27,25 +27,23 @@ export default function Testimonials() {
   return (
     <section
       className="relative py-24 px-4 overflow-hidden"
-      style={{ background: "#0d1f1a" }}
+      style={{ background: "#f0fafb" }}
     >
+      {/* Glow blobs */}
+      <div className="absolute top-10 left-20 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: "#06b6d410" }}></div>
+      <div className="absolute bottom-10 right-20 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: "#06b6d410" }}></div>
+
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
-          <p
-            className="text-sm font-medium tracking-widest uppercase"
-            style={{ color: "#13f076" }}
-          >
+          <p className="text-sm font-medium tracking-widest uppercase" style={{ color: "#06b6d4" }}>
             Customer Stories
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Trusted by <span style={{ color: "#13f076" }}>Growing Businesses</span>
+          <h2 className="text-4xl md:text-5xl font-bold" style={{ color: "#0a0a0a" }}>
+            Trusted by <span style={{ color: "#06b6d4" }}>Growing Businesses</span>
           </h2>
-          <p
-            className="text-lg max-w-2xl mx-auto"
-            style={{ color: "rgba(255,255,255,0.55)" }}
-          >
+          <p className="text-lg max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
             See how companies use Kaizen ERP to streamline operations and scale faster
           </p>
         </div>
@@ -57,11 +55,18 @@ export default function Testimonials() {
               key={index}
               className="p-8 rounded-2xl transition-all duration-300 flex flex-col justify-between"
               style={{
-                background: "#111f1a",
-                border: "1px solid #13f07630",
+                background: "#ffffff",
+                border: "1px solid #06b6d425",
+                boxShadow: "0 2px 16px rgba(6,182,212,0.06)",
               }}
-              onMouseEnter={e => (e.currentTarget.style.borderColor = "#13f07670")}
-              onMouseLeave={e => (e.currentTarget.style.borderColor = "#13f07630")}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = "#06b6d460"
+                e.currentTarget.style.boxShadow = "0 4px 24px rgba(6,182,212,0.12)"
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = "#06b6d425"
+                e.currentTarget.style.boxShadow = "0 2px 16px rgba(6,182,212,0.06)"
+              }}
             >
               {/* Stars */}
               <div>
@@ -70,7 +75,7 @@ export default function Testimonials() {
                     <Star
                       key={i}
                       className="w-4 h-4"
-                      style={{ fill: "#13f076", color: "#13f076" }}
+                      style={{ fill: "#06b6d4", color: "#06b6d4" }}
                     />
                   ))}
                 </div>
@@ -78,7 +83,7 @@ export default function Testimonials() {
                 {/* Quote */}
                 <p
                   className="text-base leading-relaxed italic mb-6"
-                  style={{ color: "rgba(255,255,255,0.75)" }}
+                  style={{ color: "#374151" }}
                 >
                   "{testimonial.quote}"
                 </p>
@@ -87,19 +92,15 @@ export default function Testimonials() {
               {/* Author */}
               <div
                 className="border-t pt-4"
-                style={{ borderColor: "#13f07620" }}
+                style={{ borderColor: "#06b6d420" }}
               >
-                <p className="font-semibold text-white">{testimonial.author}</p>
-                <p
-                  className="text-sm mb-2"
-                  style={{ color: "rgba(255,255,255,0.45)" }}
-                >
+                <p className="font-semibold" style={{ color: "#0a0a0a" }}>
+                  {testimonial.author}
+                </p>
+                <p className="text-sm mb-2" style={{ color: "#9ca3af" }}>
                   {testimonial.role}
                 </p>
-                <p
-                  className="text-sm font-semibold"
-                  style={{ color: "#13f076" }}
-                >
+                <p className="text-sm font-semibold" style={{ color: "#06b6d4" }}>
                   {testimonial.stats}
                 </p>
               </div>

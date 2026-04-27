@@ -1,7 +1,5 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-
 const technologies = [
   { name: "Next.js", category: "Frontend" },
   { name: "React", category: "Frontend" },
@@ -28,40 +26,34 @@ export default function TechStack() {
   return (
     <section
       className="relative py-24 px-4 overflow-hidden"
-      style={{ background: "#0d1f1a" }}
+      style={{ background: "#f0fafb" }}
     >
       {/* Top fade */}
       <div
         className="absolute top-0 left-0 right-0 h-24 z-10 pointer-events-none"
-        style={{
-          background: "linear-gradient(to bottom, #0d1f1a, transparent)",
-        }}
+        style={{ background: "linear-gradient(to bottom, #f0fafb, transparent)" }}
       />
       {/* Bottom fade */}
       <div
         className="absolute bottom-0 left-0 right-0 h-24 z-10 pointer-events-none"
-        style={{
-          background: "linear-gradient(to top, #0d1f1a, transparent)",
-        }}
+        style={{ background: "linear-gradient(to top, #f0fafb, transparent)" }}
       />
+
+      {/* Glow blobs */}
+      <div className="absolute top-10 left-20 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: "#06b6d410" }}></div>
+      <div className="absolute bottom-10 right-20 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: "#06b6d410" }}></div>
 
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
-          <p
-            className="text-sm font-medium tracking-widest uppercase"
-            style={{ color: "#13f076" }}
-          >
+          <p className="text-sm font-medium tracking-widest uppercase" style={{ color: "#06b6d4" }}>
             Our Tech Stack
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Built With <span style={{ color: "#13f076" }}>World-Class</span> Technologies
+          <h2 className="text-4xl md:text-5xl font-bold" style={{ color: "#0a0a0a" }}>
+            Built With <span style={{ color: "#06b6d4" }}>World-Class</span> Technologies
           </h2>
-          <p
-            className="text-lg max-w-2xl mx-auto"
-            style={{ color: "rgba(255,255,255,0.55)" }}
-          >
+          <p className="text-lg max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
             Kaizen ERP is powered by modern, battle-tested technologies to ensure performance, security, and scale
           </p>
         </div>
@@ -76,17 +68,13 @@ export default function TechStack() {
                 key={i}
                 className="flex-shrink-0 px-6 py-4 rounded-xl flex flex-col items-center gap-1 min-w-[140px]"
                 style={{
-                  background: "#111f1a",
-                  border: "1px solid #13f07630",
+                  background: "#ffffff",
+                  border: "1px solid #06b6d425",
+                  boxShadow: "0 2px 12px rgba(6,182,212,0.06)",
                 }}
               >
-                <span className="text-white font-semibold text-sm">{tech.name}</span>
-                <span
-                  className="text-xs"
-                  style={{ color: "#13f076" }}
-                >
-                  {tech.category}
-                </span>
+                <span className="font-semibold text-sm" style={{ color: "#0a0a0a" }}>{tech.name}</span>
+                <span className="text-xs" style={{ color: "#06b6d4" }}>{tech.category}</span>
               </div>
             ))}
           </div>
@@ -98,17 +86,13 @@ export default function TechStack() {
                 key={i}
                 className="flex-shrink-0 px-6 py-4 rounded-xl flex flex-col items-center gap-1 min-w-[140px]"
                 style={{
-                  background: "#111f1a",
-                  border: "1px solid #13f07630",
+                  background: "#ffffff",
+                  border: "1px solid #06b6d425",
+                  boxShadow: "0 2px 12px rgba(6,182,212,0.06)",
                 }}
               >
-                <span className="text-white font-semibold text-sm">{tech.name}</span>
-                <span
-                  className="text-xs"
-                  style={{ color: "#13f076" }}
-                >
-                  {tech.category}
-                </span>
+                <span className="font-semibold text-sm" style={{ color: "#0a0a0a" }}>{tech.name}</span>
+                <span className="text-xs" style={{ color: "#06b6d4" }}>{tech.category}</span>
               </div>
             ))}
           </div>
@@ -116,7 +100,6 @@ export default function TechStack() {
         </div>
       </div>
 
-      {/* Animation styles */}
       <style jsx>{`
         @keyframes scrollLeft {
           0% { transform: translateX(0); }

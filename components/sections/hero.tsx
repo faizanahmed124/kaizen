@@ -8,8 +8,12 @@ export default function Hero() {
   return (
     <section
       className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden"
-      style={{ background: "#0d1f1a" }}
+      style={{ background: "#f0fafb" }}
     >
+      {/* Glow blobs */}
+      <div className="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl pointer-events-none" style={{ background: "#06b6d415" }}></div>
+      <div className="absolute bottom-20 right-10 w-72 h-72 rounded-full blur-3xl pointer-events-none" style={{ background: "#06b6d410" }}></div>
+
       <div className="relative z-20 max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-26 items-center">
           <div className="space-y-8">
@@ -18,20 +22,18 @@ export default function Hero() {
               {/* Badge */}
               <div
                 className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium w-fit"
-                style={{ border: "1px solid #13f07630", background: "#13f07610", color: "#13f076" }}
+                style={{ border: "1px solid #06b6d430", background: "#06b6d412", color: "#06b6d4" }}
               >
                 <Sparkles className="w-4 h-4" />
                 Kaizen ERP — Built for Growth
               </div>
 
-              <h1
-                className="text-6xl lg:text-5xl font-bold text-balance leading-tight text-white"
-              >
+              <h1 className="text-6xl lg:text-5xl font-bold text-balance leading-tight" style={{ color: "#0a0a0a" }}>
                 Improve Every Day.{" "}
-                <span style={{ color: "#13f076" }}>Scale Every Way.</span>
+                <span style={{ color: "#06b6d4" }}>Scale Every Way.</span>
               </h1>
 
-              <p className="text-xl leading-relaxed" style={{ color: "rgba(255,255,255,0.60)" }}>
+              <p className="text-xl leading-relaxed" style={{ color: "#6b7280" }}>
                 Kaizen ERP is an all-in-one business management platform that streamlines your operations,
                 inventory, finance, and HR — so you can focus on growing smarter every day.
               </p>
@@ -41,7 +43,7 @@ export default function Hero() {
               <Button
                 size="lg"
                 className="font-semibold rounded-full px-8"
-                style={{ background: "#13f076", color: "#0d1f1a" }}
+                style={{ background: "#06b6d4", color: "#ffffff" }}
               >
                 Get Started Free
               </Button>
@@ -50,9 +52,9 @@ export default function Hero() {
                 variant="outline"
                 className="rounded-full px-8 font-semibold"
                 style={{
-                  border: "1px solid #13f07650",
+                  border: "1px solid #06b6d450",
                   background: "transparent",
-                  color: "#13f076",
+                  color: "#06b6d4",
                 }}
               >
                 Watch Demo
@@ -61,24 +63,24 @@ export default function Hero() {
 
             {/* Stats Row */}
             <div
-              className="flex gap-8 pt-2 pb-2 border-t"
-              style={{ borderColor: "#13f07620" }}
+              className="flex gap-8 pt-4 pb-2 border-t"
+              style={{ borderColor: "#06b6d420" }}
             >
               <div>
-                <p className="text-2xl font-bold" style={{ color: "#13f076" }}>500+</p>
-                <p className="text-xs" style={{ color: "rgba(255,255,255,0.50)" }}>Businesses Onboarded</p>
+                <p className="text-2xl font-bold" style={{ color: "#06b6d4" }}>500+</p>
+                <p className="text-xs" style={{ color: "#9ca3af" }}>Businesses Onboarded</p>
               </div>
               <div>
-                <p className="text-2xl font-bold" style={{ color: "#13f076" }}>99.9%</p>
-                <p className="text-xs" style={{ color: "rgba(255,255,255,0.50)" }}>Uptime Guaranteed</p>
+                <p className="text-2xl font-bold" style={{ color: "#06b6d4" }}>99.9%</p>
+                <p className="text-xs" style={{ color: "#9ca3af" }}>Uptime Guaranteed</p>
               </div>
               <div>
-                <p className="text-2xl font-bold" style={{ color: "#13f076" }}>3x</p>
-                <p className="text-xs" style={{ color: "rgba(255,255,255,0.50)" }}>Faster Operations</p>
+                <p className="text-2xl font-bold" style={{ color: "#06b6d4" }}>3x</p>
+                <p className="text-xs" style={{ color: "#9ca3af" }}>Faster Operations</p>
               </div>
             </div>
 
-            <div className="text-sm" style={{ color: "rgba(255,255,255,0.35)" }}>
+            <div className="text-sm" style={{ color: "#9ca3af" }}>
               99 SW 8th St, Miami, FL 33130
             </div>
           </div>

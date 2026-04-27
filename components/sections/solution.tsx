@@ -39,15 +39,23 @@ export default function Solution() {
   return (
     <section
       className="relative py-24 px-4 overflow-hidden"
-      style={{ background: "#0d1f1a" }}
+      style={{ background: "#f0fafb" }}
     >
+      {/* Glow blobs */}
+      <div className="absolute top-10 left-20 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: "#06b6d410" }}></div>
+      <div className="absolute bottom-10 right-20 w-64 h-64 rounded-full blur-3xl pointer-events-none" style={{ background: "#06b6d410" }}></div>
+
       <div className="max-w-7xl mx-auto">
+
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Core Features
+          <p className="text-sm font-medium tracking-widest uppercase" style={{ color: "#06b6d4" }}>
+            What We Offer
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold" style={{ color: "#0a0a0a" }}>
+            Core <span style={{ color: "#06b6d4" }}>Features</span>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: "rgba(255,255,255,0.55)" }}>
+          <p className="text-lg max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
             Everything your team needs to manage and grow your business in one unified platform
           </p>
         </div>
@@ -59,23 +67,31 @@ export default function Solution() {
             return (
               <div
                 key={index}
-                className="p-8 rounded-2xl transition group cursor-default"
+                className="p-8 rounded-2xl transition-all duration-300 cursor-default"
                 style={{
-                  background: "#111f1a",
-                  border: "1px solid #13f07630",
+                  background: "#ffffff",
+                  border: "1px solid #06b6d425",
+                  boxShadow: "0 2px 16px rgba(6,182,212,0.06)",
                 }}
-                onMouseEnter={e => (e.currentTarget.style.borderColor = "#13f07670")}
-                onMouseLeave={e => (e.currentTarget.style.borderColor = "#13f07630")}
+                onMouseEnter={e => {
+                  e.currentTarget.style.borderColor = "#06b6d460"
+                  e.currentTarget.style.boxShadow = "0 4px 24px rgba(6,182,212,0.12)"
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.borderColor = "#06b6d425"
+                  e.currentTarget.style.boxShadow = "0 2px 16px rgba(6,182,212,0.06)"
+                }}
               >
-                <Icon
-                  className="w-8 h-8 mb-5"
-                  style={{ color: "#13f076" }}
-                  strokeWidth={1.5}
-                />
-                <h3 className="text-lg font-semibold text-white mb-2">
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                  style={{ background: "#06b6d412", border: "1px solid #06b6d430" }}
+                >
+                  <Icon className="w-6 h-6" strokeWidth={1.5} style={{ color: "#06b6d4" }} />
+                </div>
+                <h3 className="text-lg font-semibold mb-2" style={{ color: "#0a0a0a" }}>
                   {feature.title}
                 </h3>
-                <p className="text-sm" style={{ color: "rgba(255,255,255,0.50)" }}>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
                   {feature.description}
                 </p>
               </div>

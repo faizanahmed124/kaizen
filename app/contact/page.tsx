@@ -1,19 +1,24 @@
 'use client'
 
-import React from "react"
-
+import React, { useState, useEffect, useRef } from "react"
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Footer from '@/components/sections/footer'
-import { useState } from 'react'
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: '',
-  })
+  const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '' })
+  const [submitted, setSubmitted] = useState(false)
+  const [visible, setVisible] = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true) },
+      { threshold: 0.1 }
+    )
+    if (sectionRef.current) observer.observe(sectionRef.current)
+    return () => observer.disconnect()
+  }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -22,149 +27,186 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
+    setSubmitted(true)
     setFormData({ name: '', email: '', company: '', message: '' })
-    alert('Message sent! We\'ll get back to you soon.')
+    setTimeout(() => setSubmitted(false), 4000)
   }
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: 'Email',
-      value: 'support@cybershield.com',
-      link: 'mailto:support@cybershield.com'
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
-    },
-    {
-      icon: MapPin,
-      label: 'Address',
-      value: '99 SW 8th St, Miami, FL 33130',
-      link: '#'
-    },
-  ]
+  const hoverIn = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.currentTarget.style.borderColor = "#06b6d460"
+    e.currentTarget.style.transform = "translateY(-4px)"
+  }
+
+  const hoverOut = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.currentTarget.style.borderColor = "#06b6d425"
+    e.currentTarget.style.transform = "translateY(0)"
+  }
+
+  const btnIn = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.style.background = "#0891b2"
+  }
+
+  const btnOut = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.style.background = "#06b6d4"
+  }
+
+  const focusIn = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    e.currentTarget.style.borderColor = "#06b6d4"
+  }
+
+  const focusOut = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    e.currentTarget.style.borderColor = "#06b6d430"
+  }
+
+  const fade = (delay: number): React.CSSProperties => ({
+    opacity: visible ? 1 : 0,
+    transform: visible ? "translateY(0)" : "translateY(28px)",
+    transition: `opacity 0.7s ease ${delay}ms, transform 0.7s ease ${delay}ms`,
+  })
+
+  const inputStyle: React.CSSProperties = {
+    width: "100%",
+    padding: "12px 16px",
+    background: "#f8fffe",
+    border: "1px solid #06b6d430",
+    borderRadius: "10px",
+    color: "#0a0a0a",
+    outline: "none",
+    fontSize: "14px",
+  }
+
+  const labelStyle: React.CSSProperties = {
+    display: "block",
+    fontSize: "13px",
+    marginBottom: "8px",
+    color: "#374151",
+    fontWeight: 500,
+  }
+
+  const cardStyle: React.CSSProperties = {
+    display: "block",
+    padding: "32px",
+    borderRadius: "16px",
+    textAlign: "center",
+    background: "#ffffff",
+    border: "1px solid #06b6d425",
+    boxShadow: "0 2px 16px rgba(6,182,212,0.06)",
+    transition: "all 0.3s",
+  }
+
+  const iconBoxStyle: React.CSSProperties = {
+    width: "56px",
+    height: "56px",
+    borderRadius: "12px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    margin: "0 auto 16px",
+    background: "#06b6d412",
+    border: "1px solid #06b6d430",
+  }
 
   return (
-    <main className="relative bg-background text-foreground overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
-      </div>
+    <main className="relative overflow-hidden" style={{ background: "#f0fafb" }}>
 
-      <div className="relative z-10 pt-32 pb-20">
+      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl pointer-events-none" style={{ background: "#06b6d410" }} />
+      <div className="absolute top-1/3 right-1/4 w-96 h-96 rounded-full blur-3xl pointer-events-none" style={{ background: "#06b6d410" }} />
+
+      <div ref={sectionRef} className="relative z-10 pt-32 pb-20">
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-semibold mb-6 neon-text-glow">
-              Get in <span className="text-accent">Touch</span>
+
+          {/* Header */}
+          <div style={fade(0)} className="text-center mb-16">
+            <p className="text-sm font-medium tracking-widest uppercase mb-4" style={{ color: "#06b6d4" }}>
+              Contact Us
+            </p>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: "#0a0a0a" }}>
+              Get in <span style={{ color: "#06b6d4" }}>Touch</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Have questions? Our team is ready to help. Reach out to us anytime.
+            <p className="text-xl max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
+              Have questions about Kaizen ERP? Our team is ready to help you get started.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {contactInfo.map((info, idx) => {
-              const Icon = info.icon
-              return (
-                <a
-                  key={idx}
-                  href={info.link}
-                  className="bg-card/50 border-2 border-primary/30 rounded-xl p-8 text-center hover:border-accent transition-colors group"
-                >
-                  <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <Icon className="w-8 h-8 text-background" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{info.label}</h3>
-                  <p className="text-accent hover:text-primary transition-colors">{info.value}</p>
-                </a>
-              )
-            })}
+          {/* Cards */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+
+            <div style={fade(100)}>
+              <a href="mailto:support@kaisenerp.com" style={cardStyle} onMouseEnter={hoverIn} onMouseLeave={hoverOut}>
+                <div style={iconBoxStyle}>
+                  <Mail className="w-6 h-6" strokeWidth={1.5} style={{ color: "#06b6d4" }} />
+                </div>
+                <h3 className="text-lg font-semibold mb-2" style={{ color: "#0a0a0a" }}>Email</h3>
+                <p className="text-sm" style={{ color: "#06b6d4" }}>support@kaisenerp.com</p>
+              </a>
+            </div>
+
+            <div style={fade(200)}>
+              <a href="tel:+15551234567" style={cardStyle} onMouseEnter={hoverIn} onMouseLeave={hoverOut}>
+                <div style={iconBoxStyle}>
+                  <Phone className="w-6 h-6" strokeWidth={1.5} style={{ color: "#06b6d4" }} />
+                </div>
+                <h3 className="text-lg font-semibold mb-2" style={{ color: "#0a0a0a" }}>Phone</h3>
+                <p className="text-sm" style={{ color: "#06b6d4" }}>+1 (555) 123-4567</p>
+              </a>
+            </div>
+
+            <div style={fade(300)}>
+              <a href="#" style={cardStyle} onMouseEnter={hoverIn} onMouseLeave={hoverOut}>
+                <div style={iconBoxStyle}>
+                  <MapPin className="w-6 h-6" strokeWidth={1.5} style={{ color: "#06b6d4" }} />
+                </div>
+                <h3 className="text-lg font-semibold mb-2" style={{ color: "#0a0a0a" }}>Address</h3>
+                <p className="text-sm" style={{ color: "#06b6d4" }}>99 SW 8th St, Miami, FL 33130</p>
+              </a>
+            </div>
+
           </div>
 
-          {/* Contact Form */}
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-card/50 border-2 border-primary/30 rounded-2xl p-8">
-              <h2 className="text-2xl font-semibold mb-8 text-center">Send us a Message</h2>
-              
+          {/* Form */}
+          <div style={fade(350)} className="max-w-2xl mx-auto">
+            <div className="p-8 rounded-2xl" style={{ background: "#ffffff", border: "1px solid #06b6d425", boxShadow: "0 4px 32px rgba(6,182,212,0.08)" }}>
+
+              <h2 className="text-2xl font-bold text-center mb-8" style={{ color: "#0a0a0a" }}>
+                Send us a <span style={{ color: "#06b6d4" }}>Message</span>
+              </h2>
+
+              {submitted && (
+                <div className="mb-6 p-4 rounded-xl text-center text-sm font-medium" style={{ background: "#06b6d412", border: "1px solid #06b6d430", color: "#06b6d4" }}>
+                  Message sent! We will get back to you soon.
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm  text-foreground mb-2 ">
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-accent transition-colors"
-                      placeholder="John Doe"
-                    />
+                    <label style={labelStyle}>Full Name</label>
+                    <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="John Doe" style={inputStyle} onFocus={focusIn} onBlur={focusOut} />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm  text-foreground mb-2 ">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-accent transition-colors"
-                      placeholder="john@company.com"
-                    />
+                    <label style={labelStyle}>Email Address</label>
+                    <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="john@company.com" style={inputStyle} onFocus={focusIn} onBlur={focusOut} />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="company" className="block text-sm  text-foreground mb-2 ">
-                    Company
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-accent transition-colors"
-                    placeholder="Your Company"
-                  />
+                  <label style={labelStyle}>Company</label>
+                  <input type="text" name="company" value={formData.company} onChange={handleChange} placeholder="Your Company Name" style={inputStyle} onFocus={focusIn} onBlur={focusOut} />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm  text-foreground mb-2 ">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="w-full px-4 py-3 bg-background/50 border-2 border-primary/30 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-accent transition-colors resize-none"
-                    placeholder="Tell us about your security needs..."
-                  ></textarea>
+                  <label style={labelStyle}>Message</label>
+                  <textarea name="message" value={formData.message} onChange={handleChange} required rows={5} placeholder="Tell us about your business needs..." style={{ ...inputStyle, resize: "none" }} onFocus={focusIn} onBlur={focusOut} />
                 </div>
 
-                <Button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-primary to-accent text-background font-semibold  rounded-full py-3  hover:shadow-lg"
-                >
+                <Button type="submit" className="w-full font-semibold rounded-full py-6 flex items-center justify-center gap-2" style={{ background: "#06b6d4", color: "#ffffff" }} onMouseEnter={btnIn} onMouseLeave={btnOut}>
                   <Send className="w-4 h-4" />
                   Send Message
                 </Button>
               </form>
             </div>
           </div>
+
         </section>
       </div>
 
