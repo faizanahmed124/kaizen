@@ -183,7 +183,7 @@ export default function Services() {
                 <span style={{ color: "#06b6d4" }}>Smarter Business?</span>
               </h2>
               <p className="text-lg mb-8 max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
-                Let's schedule a free demo and show you exactly how Kaizen ERP can transform your operations.
+                Let's schedule a free demo and show you exactly how Kaixen ERP can transform your operations.
               </p>
               <Button
                 className="rounded-full px-10 font-semibold"

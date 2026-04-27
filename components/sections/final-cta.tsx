@@ -46,7 +46,7 @@ export default function FinalCTA() {
 
           {/* Subtext */}
           <p className="text-lg max-w-xl mx-auto" style={{ color: "#6b7280" }}>
-            Join hundreds of businesses using Kaizen ERP to automate operations,
+            Join hundreds of businesses using Kaixen ERP to automate operations,
             reduce costs, and grow faster — starting today.
           </p>
 

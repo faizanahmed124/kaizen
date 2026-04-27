@@ -8,14 +8,14 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "How long does it take to set up Kaizen ERP?",
+      question: "How long does it take to set up Kaixen ERP?",
       answer:
         "Most businesses are fully up and running within 24 hours. Our onboarding team handles the entire setup process, migrates your existing data, and trains your team — so you can go live without any technical headaches.",
     },
     {
-      question: "Can Kaizen ERP handle multiple departments?",
+      question: "Can Kaixen ERP handle multiple departments?",
       answer:
-        "Yes. Kaizen ERP is built to connect HR, finance, inventory, sales, and operations in one unified platform. Every department works from the same real-time data, eliminating silos and miscommunication.",
+        "Yes. Kaixen ERP is built to connect HR, finance, inventory, sales, and operations in one unified platform. Every department works from the same real-time data, eliminating silos and miscommunication.",
     },
     {
       question: "Is my business data secure?",
@@ -23,9 +23,9 @@ export default function FAQ() {
         "Absolutely. We use end-to-end encryption, role-based access control, and regular security audits to keep your data safe. Your data is stored on secure cloud infrastructure with 99.9% uptime guaranteed.",
     },
     {
-      question: "Can I customize Kaizen ERP for my industry?",
+      question: "Can I customize Kaixen ERP for my industry?",
       answer:
-        "Yes. Kaizen ERP is fully customizable. Whether you're in retail, manufacturing, healthcare, or professional services, we tailor workflows, reports, and modules to match exactly how your business operates.",
+        "Yes. Kaixen ERP is fully customizable. Whether you're in retail, manufacturing, healthcare, or professional services, we tailor workflows, reports, and modules to match exactly how your business operates.",
     },
     {
       question: "What happens if I need help after going live?",
@@ -54,7 +54,7 @@ export default function FAQ() {
             Common <span style={{ color: "#06b6d4" }}>Questions</span>
           </h2>
           <p className="text-lg" style={{ color: "#6b7280" }}>
-            Everything you need to know about Kaizen ERP
+            Everything you need to know about Kaixen ERP
           </p>
         </div>
 

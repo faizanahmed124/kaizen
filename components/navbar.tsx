@@ -37,7 +37,7 @@ export default function Navbar() {
               K
             </div>
             <span className="font-bold text-lg" style={{ color: "#0a0a0a" }}>
-              Kaizen <span style={{ color: "#06b6d4" }}>ERP</span>
+              Kaixen <span style={{ color: "#06b6d4" }}>ERP</span>
             </span>
           </Link>
 

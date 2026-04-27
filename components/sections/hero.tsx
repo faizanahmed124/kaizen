@@ -25,7 +25,7 @@ export default function Hero() {
                 style={{ border: "1px solid #06b6d430", background: "#06b6d412", color: "#06b6d4" }}
               >
                 <Sparkles className="w-4 h-4" />
-                Kaizen ERP — Built for Growth
+                Kaixen ERP — Built for Growth
               </div>
 
               <h1 className="text-6xl lg:text-5xl font-bold text-balance leading-tight" style={{ color: "#0a0a0a" }}>
@@ -34,7 +34,7 @@ export default function Hero() {
               </h1>
 
               <p className="text-xl leading-relaxed" style={{ color: "#6b7280" }}>
-                Kaizen ERP is an all-in-one business management platform that streamlines your operations,
+                Kaixen ERP is an all-in-one business management platform that streamlines your operations,
                 inventory, finance, and HR — so you can focus on growing smarter every day.
               </p>
             </div>

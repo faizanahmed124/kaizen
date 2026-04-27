@@ -99,7 +99,7 @@ export default function About() {
     {
       icon: TrendingUp,
       title: 'Continuous Improvement',
-      description: 'Inspired by the Kaizen philosophy, we improve our platform every single day based on real user feedback.',
+      description: 'Inspired by the Kaixen philosophy, we improve our platform every single day based on real user feedback.',
     },
     {
       icon: Users,
@@ -136,7 +136,7 @@ export default function About() {
               </p>
               <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: "#0a0a0a" }}>
                 About{" "}
-                <span style={{ color: "#06b6d4" }}>Kaizen ERP</span>
+                <span style={{ color: "#06b6d4" }}>Kaixen ERP</span>
               </h1>
               <p className="text-xl max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
                 We help businesses of every size run smarter, move faster, and grow continuously — with one unified ERP platform built for the modern world.
@@ -155,7 +155,7 @@ export default function About() {
               </h2>
               <p className="text-lg leading-relaxed" style={{ color: "#6b7280" }}>
                 To make enterprise-grade business management accessible to every company — not just the Fortune 500.
-                Kaizen ERP was built on the belief that small and mid-sized businesses deserve powerful tools that are
+                Kaixen ERP was built on the belief that small and mid-sized businesses deserve powerful tools that are
                 simple to use, affordable to run, and designed to grow with them. Our mission is continuous improvement
                 in everything we build — because better software means better businesses.
               </p>

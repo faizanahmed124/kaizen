@@ -32,7 +32,7 @@ export default function UseCases() {
             Who We <span style={{ color: "#06b6d4" }}>Serve</span>
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
-            Kaizen ERP is built for every industry that wants to grow smarter
+            Kaixen ERP is built for every industry that wants to grow smarter
           </p>
         </div>
 

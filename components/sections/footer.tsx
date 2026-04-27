@@ -17,13 +17,13 @@ export default function Footer() {
               K
             </div>
             <span className="font-bold text-lg" style={{ color: "#0a0a0a" }}>
-              Kaizen <span style={{ color: "#06b6d4" }}>ERP</span>
+              Kaixen <span style={{ color: "#06b6d4" }}>ERP</span>
             </span>
           </div>
 
           {/* Copyright */}
           <p className="text-sm text-center" style={{ color: "#9ca3af" }}>
-            © 2026 Kaizen ERP. All rights reserved.{" "}
+            © 2026 Kaixen ERP. All rights reserved.{" "}
             <span style={{ color: "#06b6d4" }}>Improve Every Day. Scale Every Way.</span>
           </p>
 

@@ -5,7 +5,7 @@ import { Star } from "lucide-react"
 export default function Testimonials() {
   const testimonials = [
     {
-      quote: "Kaizen ERP cut our manual work by 80%. Our team now focuses on growth instead of spreadsheets.",
+      quote: "Kaixen ERP cut our manual work by 80%. Our team now focuses on growth instead of spreadsheets.",
       author: "Ahmed Raza",
       role: "CEO, RetailPro Pakistan",
       stats: "80% less manual work",
@@ -17,7 +17,7 @@ export default function Testimonials() {
       stats: "3-day implementation",
     },
     {
-      quote: "Our order processing time dropped by 60%. Kaizen ERP paid for itself within the first month.",
+      quote: "Our order processing time dropped by 60%. Kaixen ERP paid for itself within the first month.",
       author: "Usman Tariq",
       role: "COO, FastDistribute Ltd.",
       stats: "60% faster processing",
@@ -44,7 +44,7 @@ export default function Testimonials() {
             Trusted by <span style={{ color: "#06b6d4" }}>Growing Businesses</span>
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
-            See how companies use Kaizen ERP to streamline operations and scale faster
+            See how companies use Kaixen ERP to streamline operations and scale faster
           </p>
         </div>
 

@@ -124,7 +124,7 @@ export default function Contact() {
               Get in <span style={{ color: "#06b6d4" }}>Touch</span>
             </h1>
             <p className="text-xl max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
-              Have questions about Kaizen ERP? Our team is ready to help you get started.
+              Have questions about Kaixen ERP? Our team is ready to help you get started.
             </p>
           </div>
 

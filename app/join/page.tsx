@@ -75,7 +75,7 @@ export default function JoinNow() {
                 Get Started
               </p>
               <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: "#0a0a0a" }}>
-                Join <span style={{ color: "#06b6d4" }}>Kaizen ERP</span>
+                Join <span style={{ color: "#06b6d4" }}>Kaixen ERP</span>
               </h1>
               <p className="text-xl max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
                 Set up your account and start running a smarter business in minutes
@@ -132,7 +132,7 @@ export default function JoinNow() {
                     <Check className="w-10 h-10" style={{ color: "#06b6d4" }} />
                   </div>
                   <h2 className="text-3xl font-bold mb-4" style={{ color: "#0a0a0a" }}>
-                    Welcome to <span style={{ color: "#06b6d4" }}>Kaizen ERP!</span>
+                    Welcome to <span style={{ color: "#06b6d4" }}>Kaixen ERP!</span>
                   </h2>
                   <p className="text-lg mb-8" style={{ color: "#6b7280" }}>
                     Your account has been created. Check your email to verify and access your dashboard.

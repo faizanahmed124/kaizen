@@ -54,7 +54,7 @@ export default function TechStack() {
             Built With <span style={{ color: "#06b6d4" }}>World-Class</span> Technologies
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "#6b7280" }}>
-            Kaizen ERP is powered by modern, battle-tested technologies to ensure performance, security, and scale
+            Kaixen ERP is powered by modern, battle-tested technologies to ensure performance, security, and scale
           </p>
         </div>
 
