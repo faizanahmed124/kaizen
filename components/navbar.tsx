@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Menu, X, TrendingUp } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem } from "@/components/ui/navigation-menu"
 
@@ -29,16 +30,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
-            <div
-              className="w-9 h-9 rounded-xl flex items-center justify-center font-bold text-sm"
-              style={{ background: "#06b6d420", border: "1px solid #06b6d440", color: "#06b6d4" }}
-            >
-              K
-            </div>
-            <span className="font-bold text-lg" style={{ color: "#0a0a0a" }}>
-              Kaixen <span style={{ color: "#06b6d4" }}>ERP</span>
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/kaixen.png"
+              alt="Kaixen ERP Logo"
+              width={200}
+              height={60}
+              className="object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
