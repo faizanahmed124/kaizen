@@ -4,7 +4,6 @@ import { Geist, Geist_Mono } from "next/font/google"
 
 import Navbar from "@/components/navbar"
 import AnimatedBackground from "@/components/AnimatedBackground"
-
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -35,7 +34,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`font-sans antialiased`}> <AnimatedBackground />   {/* 👈 add this */}
-
         <Navbar />
         {children}
         
