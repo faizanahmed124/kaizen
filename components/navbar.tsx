@@ -19,9 +19,9 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md"
+      className="fixed top-0 left-0 right-0 z-50"
       style={{
-        background: "rgba(255,255,255,0.90)",
+        background: "#ffffff",
         borderBottom: "1px solid #06b6d420",
         boxShadow: "0 2px 20px rgba(6,182,212,0.06)",
       }}
@@ -30,13 +30,14 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center" style={{ background: "transparent" }}>
             <Image
               src="/kaixen.png"
               alt="Kaixen ERP Logo"
               width={200}
               height={60}
               className="object-contain"
+              style={{ background: "transparent" }}
               priority
             />
           </Link>
@@ -86,7 +87,7 @@ export default function Navbar() {
         {mobileMenuOpen && (
           <div
             className="lg:hidden py-4 space-y-1"
-            style={{ borderTop: "1px solid #06b6d420" }}
+            style={{ borderTop: "1px solid #06b6d420", background: "#ffffff" }}
           >
             {navLinks.map((link) => (
               <Link
